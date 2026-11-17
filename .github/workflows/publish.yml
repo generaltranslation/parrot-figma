@@ -1,7 +1,7 @@
 name: Release build
 
 # Builds a Parrot release and hosts its UI on GitHub Pages: branch gh-pages, one folder per release,
-# https://opral.github.io/parrot-figma/releases/<version>/. The plugin sandbox of a release loads the UI
+# https://generaltranslation.github.io/parrot-figma/releases/<version>/. The plugin sandbox of a release loads the UI
 # from that URL, so a release folder is never overwritten and nothing else (a merge into dev, a later
 # release) can change the UI under users who run an older sandbox. Publishing to the Figma Community
 # stays a manual step in the Figma desktop app (the job summary lists the steps).
@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Release version, e.g. 0.10.101 (letters, digits, '.', '_' and '-'). The UI is hosted at https://opral.github.io/parrot-figma/releases/<version>/ ; an existing version is refused. Versions without a '-' suffix can only be built from dev"
+        description: "Release version, e.g. 0.10.101 (letters, digits, '.', '_' and '-'). The UI is hosted at https://generaltranslation.github.io/parrot-figma/releases/<version>/ ; an existing version is refused. Versions without a '-' suffix can only be built from dev"
         required: true
       plugin_name:
         description: "Plugin name written into the released manifest"
@@ -21,7 +21,7 @@ permissions:
   contents: read
 
 env:
-  PAGES_BASE_URL: https://opral.github.io/parrot-figma
+  PAGES_BASE_URL: https://generaltranslation.github.io/parrot-figma
   PAGES_BRANCH: gh-pages
 
 jobs:

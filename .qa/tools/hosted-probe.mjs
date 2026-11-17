@@ -1,6 +1,6 @@
 // Hosted-release QA: attaches to the Parrot UI iframe (PARROT_UI_ORIGIN, FILE=<file id>) and its workers over raw CDP and prints
 // console output, exceptions, Log entries (CSP / CORS / network errors) and every network request with its status.
-//   PARROT_UI_ORIGIN=https://opral.github.io FILE=4Xgyn node hosted-probe.mjs [seconds=20] [--reload] [--out file.json]
+//   PARROT_UI_ORIGIN=https://generaltranslation.github.io FILE=4Xgyn node hosted-probe.mjs [seconds=20] [--reload] [--out file.json]
 // --reload reloads the UI document after attaching with the cache disabled (everything a fresh UI load requests is then recorded; the plugin sandbox keeps running).
 import { writeFileSync } from "node:fs";
 import { uiTarget } from "./ui-target.mjs";

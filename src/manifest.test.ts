@@ -12,7 +12,7 @@ describe("plugin manifest", () => {
 	});
 
 	it("allows the GitHub Pages origin that hosts the released UI (see .github/workflows/publish.yml)", () => {
-		expect(manifest.networkAccess.allowedDomains).toContain("https://opral.github.io");
+		expect(manifest.networkAccess.allowedDomains).toContain("https://generaltranslation.github.io");
 	});
 
 	it("does not allow Figma profile picture hosts (only the hidden Users view showed them)", () => {

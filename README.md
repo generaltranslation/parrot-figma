@@ -4,7 +4,7 @@
 
 Localize your Figma designs. Link text layers to messages, switch whole frames between languages, and import and export translations in the formats your app already uses.
 
-[**Install from the Figma Community**](https://www.figma.com/community/plugin/1205803482754362456) &nbsp;&bull;&nbsp; [inlang](https://inlang.com) &nbsp;&bull;&nbsp; [Issues](https://github.com/opral/parrot-figma/issues) &nbsp;&bull;&nbsp; [Discord](https://discord.gg/gdMPPWy57R)
+[**Install from the Figma Community**](https://www.figma.com/community/plugin/1205803482754362456) &nbsp;&bull;&nbsp; [inlang](https://inlang.com) &nbsp;&bull;&nbsp; [Issues](https://github.com/generaltranslation/parrot-figma/issues) &nbsp;&bull;&nbsp; [Discord](https://discord.gg/gdMPPWy57R)
 
 <p align="center">
   <img width="900" alt="Parrot open in Figma next to an English and a German checkout screen, showing one message in English, German and French" src="docs/images/hero.png" />
