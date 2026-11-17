@@ -2,7 +2,7 @@
 // CDP /json/list lists every out-of-process iframe as its own target with a `parentId`; follow the chain up to the page target whose URL contains the file id.
 //   const t = await uiTarget("4Xgyn");   // -> { id, url, webSocketDebuggerUrl, pageUrl }
 // Without a file (arg and env FILE both empty): the only open plugin UI, or an error when it is ambiguous.
-// Hosted-release QA: PARROT_UI_ORIGIN=https://opral.github.io (the UI iframe of a released build) and PARROT_PLUGIN_NAME=<name in the released manifest>.
+// Hosted-release QA: PARROT_UI_ORIGIN=https://generaltranslation.github.io (the UI iframe of a released build) and PARROT_PLUGIN_NAME=<name in the released manifest>.
 export const uiOrigin = () => process.env.PARROT_UI_ORIGIN ?? "http://localhost:5180";
 export const pluginName = () => process.env.PARROT_PLUGIN_NAME ?? "Parrot (development)";
 export async function uiTarget(fileMatch = process.env.FILE) {

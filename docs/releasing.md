@@ -2,8 +2,8 @@
 
 A Parrot release has two parts that belong together:
 
-- **The UI**, hosted on GitHub Pages of this repository: `https://opral.github.io/parrot-figma/releases/<version>/`. It uses module workers and WebAssembly, so the plugin cannot ship it as inline HTML.
-- **The plugin sandbox** (`dist/plugin.js` and `manifest.json`), published to the Figma Community. It loads the UI from the URL above. The origin `https://opral.github.io` is in `networkAccess.allowedDomains` of `manifest.json`.
+- **The UI**, hosted on GitHub Pages of this repository: `https://generaltranslation.github.io/parrot-figma/releases/<version>/`. It uses module workers and WebAssembly, so the plugin cannot ship it as inline HTML.
+- **The plugin sandbox** (`dist/plugin.js` and `manifest.json`), published to the Figma Community. It loads the UI from the URL above. The origin `https://generaltranslation.github.io` is in `networkAccess.allowedDomains` of `manifest.json`.
 
 Users keep running the sandbox of the version they installed, so the UI of a release must never change. That is why every release has its own folder, nothing deploys when `dev` changes, and a version that exists is refused.
 
@@ -27,7 +27,7 @@ If `verify` fails (Pages slow or not set up), re-run just that job. If the run f
 Settings > Pages must be **Deploy from a branch**, branch `gh-pages`, folder `/ (root)` (`PUT` updates an existing Pages site, `POST` creates one; both need the branch):
 
 ```sh
-gh api -X PUT repos/opral/parrot-figma/pages -f build_type=legacy -f 'source[branch]=gh-pages' -f 'source[path]=/'
+gh api -X PUT repos/generaltranslation/parrot-figma/pages -f build_type=legacy -f 'source[branch]=gh-pages' -f 'source[path]=/'
 ```
 
 The first run of the workflow creates the branch; set the Pages source then and re-run its `verify` job (or create an orphan `gh-pages` branch with a README by hand first). Pushes of the workflow trigger the Pages build.
@@ -40,10 +40,10 @@ Before publishing, run the built files, not the dev server:
 
 1. Download and unzip the `parrot-figma-plugin` artifact of the run.
 2. In the Figma desktop app: **Plugins > Development > Import plugin from manifest...** and choose the unzipped `manifest.json`. Figma registers development plugins by manifest path, so this adds an entry next to your local **Parrot (development)** instead of replacing it. The entry has the released plugin name.
-3. Run that entry in a test file. The UI must come from `https://opral.github.io/parrot-figma/releases/<version>/` (the iframe URL, for example through the remote debugging port, see below), and import, export and switching a frame must work.
+3. Run that entry in a test file. The UI must come from `https://generaltranslation.github.io/parrot-figma/releases/<version>/` (the iframe URL, for example through the remote debugging port, see below), and import, export and switching a frame must work.
 4. Remove the entry again (**Plugins > Manage plugins**, its menu) when you are done.
 
-The live QA harness in `.qa/` can drive this (see "Hosted release" in `.qa/README.md`): `PARROT_UI_ORIGIN=https://opral.github.io` makes its tools find the hosted UI iframe, `.qa/tools/hosted-probe.mjs` lists its console output, CSP/CORS errors and network requests, and `.qa/tools/net-all.mjs` records every request of a file tab (a production build may only talk to `https://inlang.com/relay`).
+The live QA harness in `.qa/` can drive this (see "Hosted release" in `.qa/README.md`): `PARROT_UI_ORIGIN=https://generaltranslation.github.io` makes its tools find the hosted UI iframe, `.qa/tools/hosted-probe.mjs` lists its console output, CSP/CORS errors and network requests, and `.qa/tools/net-all.mjs` records every request of a file tab (a production build may only talk to `https://inlang.com/relay`).
 
 ## Publish to the Figma Community
 
